@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Schibsted+Grotesk:wght@500;600;700;800;900&display=swap');
+.container{
+  max-width: 1200px;
+  height: 1000px;
+  padding: 15px;
+  margin: 0 auto;
+  background-color: #fff;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 264px;
+
+  row-gap: 32px;
+  column-gap: 20px;
+}
+
+figure{
+  background-repeat: no-repeat;   /* Встановлюється, щоб фонове зображення не повторювалось */
+  background-size: cover;   /* Фонове зображення заповнює всю площу елемента */
+  background-position: center;   /* Фонове зображення зосереджується в центрі елемента */
+  position: relative;   /* Позиціонування елемента відносно його початкової позиції */
+
+  border: 1px solid #CACAD6;   /* Встановлення рамки з товщиною 1px та колір #CACAD6 */
+  width: 100%;   /* Елемент розтягується на всю доступну ширину */
+}
+
+figure:nth-child(1){   /* Встановлює стилі для першого дочірнього елемента <figure> */
+  grid-column: 1/ span 2;   /* Задає ширину стовпця сітки, який займає елемент, який починається з першого стовпця та займає 2 стовпці */
+  grid-row: 1/ span 2;   /* Задає висоту рядка сітки, який займає елемент, який починається з першого рядка та займає 2 рядки */
+  background-image: url(/images/img1.png)   /* Задає фонове зображення елемента з файлу img1.png */
+}
+figure:nth-child(2){
+  background-image: url(/images/img2.png)
+}
+figure:nth-child(3){
+  background-image: url(/images/img3.png)
+}
+figure:nth-child(5){
+  background-image: url(/images/img4.png)
+}
+h3{
+  grid-column: 4/ span 1;
+  grid-row: 1/ span 1;
+
+  background: linear-gradient(180deg, #BC10D8 0%, rgba(80, 0, 250, 0.93) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+
+  padding-left: 41px;
+  font-size: 36px;
+  line-height: 41px;
+}
+figcaption{
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+
+  color: #5C5C5E;
+}
+
+@media(max-width: 1275px){
+  .grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  h3{
+    grid-column: 2/ span 1;
+    grid-row: 4/ span 1;
+  }
+}
